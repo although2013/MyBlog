@@ -1,0 +1,22 @@
+
+<%= render 'photos/header'%>
+
+<div class="container album-container">
+
+  <% @photos.each_slice(4) do |a| %>
+    <div class="row">
+      <% a.each do |item| %>
+        <% if !item.picture.blank? %>
+          <div class="col-sm-6 col-md-3">
+            <div class="thumbnail">
+                <%= link_to image_tag(item.picture_url(:thumb).to_s), item%>
+              <div class="caption">
+                <h4><%= item.name %></h4>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  <% end %>
+</div>

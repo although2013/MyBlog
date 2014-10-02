@@ -1,0 +1,32 @@
+<%= render 'microposts/header'%>
+
+<div class="container main_body">
+  <div class="row">
+
+    <% @microposts.each do |micropost| %>
+
+        <div class="panel panel-default">
+          
+          <div class="panel-body">
+            <%= micropost.content %>
+          </div>
+          <div class="panel-footer">
+
+            <ul>
+              <li>
+                <%= time_ago_in_words(micropost.created_at) %>
+
+              </li>
+            </ul>
+              
+            
+            
+          </div>
+        </div>
+    <% end %>
+
+    
+  <div class="row">
+    <%= will_paginate :previous_label => '<<', :next_label => '>>' %>
+  </div>
+</div>
