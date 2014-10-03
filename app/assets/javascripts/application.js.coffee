@@ -7,13 +7,11 @@
 #= require nprogress-turbolinks
 
 
-$(document).ready ->
-  $("header").headroom();
-
 
 $(document).on 'page:fetch', ->
   NProgress.start()
 $(document).on 'page:change', ->
-  NProgress.done()
+  $("header").headroom();
+  NProgress.done();
 $(document).on 'page:restore', ->
   NProgress.remove()

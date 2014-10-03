@@ -1,0 +1,12 @@
+<div class="panel panel-default micropost">
+  <div class="panel-body">
+    <%= micropost.content %>
+  </div>
+  <div class="panel-footer">
+    <ul>
+      <li>
+        <%= time_ago_in_words(micropost.created_at) %>
+      </li>
+    </ul>    
+  </div>
+</div>
