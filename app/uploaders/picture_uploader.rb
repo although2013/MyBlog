@@ -32,11 +32,15 @@ class PictureUploader < CarrierWave::Uploader::Base
         if img.columns > 900
           i = img.columns / 800
           img.resize_to_fill! img.columns/i, img.rows/i
+        else
+          img
         end
       else
         if img.rows >= 700
           i = img.rows / 600
           img.resize_to_fill! img.columns/i, img.rows/i
+        else
+          img
         end
       end
     end

@@ -21,7 +21,7 @@ handleOut =  ->
   $(this).css("border-color", "#dddddd");
   $(this).next().css("border-top-color","#dddddd");
 
-changeBolderColor = ->
+changeBorderColor = ->
   $(".panel").hover(handleIn, handleOut);
 
-$(document).bind("DOMSubtreeModified", changeBolderColor)
+$(document).bind("DOMSubtreeModified", changeBorderColor)
