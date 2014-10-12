@@ -1,0 +1,20 @@
+<header class="navbar navbar-fixed-top navbar-default" role="navigation">
+  <div>
+    <nav>
+      <ul class="nav navbar-nav">
+        <li><a href="/microposts">Micro</a></li>
+        <li><a href="/photos">Album</a></li>
+      </ul>
+    </nav>
+    
+      <% if signed_in? %>
+        <%= link_to @current_user.name, @current_user, class:"btn pull-right"%>
+        <%= link_to "退出登录", signout_path, method: "delete" %>
+        <% if false %>
+          <a href='microposts/new' id="upload_picture_button" class='btn btn-primary pull-right' role='button'>新的微博</a>
+        <% end %>
+      <% else %>
+        <%= link_to "我", login_url, class:'pull-right' %>
+      <% end %>
+  </div>
+</header>

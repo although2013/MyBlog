@@ -1,11 +1,12 @@
 #= require jquery
+
 #= require jquery_ujs
 #= require turbolinks
 #= require_tree .
 #= require _headroom.jquery
 #= require nprogress
 #= require nprogress-turbolinks
-
+#= require bootstrap
 
 
 $(document).on 'page:fetch', ->

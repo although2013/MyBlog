@@ -1,0 +1,29 @@
+<header class="navbar navbar-fixed-top navbar-default" role="navigation">
+    <nav>
+      <ul class="nav navbar-nav" >
+        <li><a href="/microposts">微博</a></li>
+        <li><a href="/photos">相册</a></li>
+      </ul>
+      <ul class="nav navbar-nav pull-right">
+        <% if signed_in? %>
+          <li id="fat-menu" class="dropdown pull-right" >
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-no-turbolink="true">我的账户<b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu">
+              <li><%= link_to "资料", "#" %></li>
+              <li><%= link_to "设置", "#" %></li>
+              <li class="divider"></li>
+              <li><%= link_to "退出登录", signout_path, method: "delete" %></li>
+            </ul>
+          </li>
+                <% if false %>
+                  <a href='microposts/new' id="upload_picture_button" class='btn btn-primary pull-right' role='button'>新的微博</a>
+                <% end %>
+        <% else %>
+          <ul class="nav navbar-nav">
+            <li><%= link_to "我", login_url, class:'pull-right' %></li>
+          </ul>
+        <% end %>
+      </ul>
+  </nav>
+</header>

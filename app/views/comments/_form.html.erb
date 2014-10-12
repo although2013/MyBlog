@@ -1,0 +1,14 @@
+<div class="comment_form">
+  <%= form_for([@micropost, @micropost.comments.build]) do |f| %>
+    <div class="form-group">
+      <%= f.label :content, '写个评论:' %><br>
+
+      <%= f.text_area :content, :class => "form-control", :value => writed_comments %>
+      <% delete_writed_comments %>
+    </div>
+  
+    <div class="actions">
+      <%= f.submit :class => "btn btn-primary"%>
+    </div>
+  <% end %>
+</div>

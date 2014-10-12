@@ -1,0 +1,28 @@
+<div class="center pad">
+
+  <% if flash[:error] %>
+    <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
+  <% end %>
+
+<h1>登录您的帐户</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <div class="login_form">
+      <%= form_for(:session, url: sessions_path) do |f| %>
+
+        <%= f.label :email, "电子邮箱 Email" %>
+        <%= f.text_field :email, placeholder:"邮箱地址", class:'form-control input_short' %><br>
+
+        <%= f.label :password, "请输入密码" %>
+        <%= f.password_field :password, placeholder:"密码" , class:'form-control input_short' %><br>
+
+        <%= f.submit "登 录", class: "btn btn-large btn-primary" %>
+      <% end %>
+      <br>
+      <p>还没有注册账户？  <%= link_to "现在注册!", '#'%></p>
+    </div>
+
+  </div>
+</div>
+</div>

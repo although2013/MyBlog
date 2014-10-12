@@ -5,8 +5,17 @@
   <div class="panel-footer">
     <ul>
       <li>
+        <%= link_to "评论 #{micropost.comments.count}", micropost_path(micropost) %>
+      </li>
+      <li>
         <%= time_ago_in_words(micropost.created_at) %>
       </li>
     </ul>
   </div>
+  <% if !micropost.comments.blank? %>
+    <div class="comments_index">
+      <% comment = micropost.comments.first %>
+      <p class="comment_newest">最新: <%= link_to comment.user.name, comment.user %>: <%= comment.content%></p>
+    </div>
+  <% end %>
 </div>

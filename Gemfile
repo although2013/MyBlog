@@ -8,6 +8,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'bcrypt'
 
 # Hide your header until you need it.
 gem 'headroom-rails'
