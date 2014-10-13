@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
   # GET /microposts
   # GET /microposts.json
   def index
-    @microposts = Micropost.paginate(page: params[:page]).per_page(15).order('created_at DESC')
+    @microposts = Micropost.paginate(page: params[:page]).per_page(15)
     respond_to do |format|
         format.html
         format.js

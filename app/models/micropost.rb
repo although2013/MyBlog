@@ -1,4 +1,4 @@
 class Micropost < ActiveRecord::Base
-  
-  has_many :comments, dependent: :destroy
+  default_scope -> { order('created_at DESC') }
+  has_many :comments,:as => :commentable, dependent: :destroy
 end

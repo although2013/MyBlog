@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
+
   resources :users
   resources :microposts do
     resources :comments
   end
 
-  resources :photos
+  resources :photos do
+    resources :comments
+  end
+
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'microposts#index'
