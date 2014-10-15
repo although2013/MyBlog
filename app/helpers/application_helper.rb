@@ -28,4 +28,15 @@ module ApplicationHelper
     else                      "#{(distance_in_minutes / 525600).round}年"
    end
   end
+
+
+  def login?
+    !!current_user
+  end
+
+  def login_required
+    unless login?
+      redirect_to login_path
+    end
+  end
 end

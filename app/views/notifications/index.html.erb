@@ -1,0 +1,8 @@
+<% @notifications.each do |notification| %>
+<p>------------------------------------</p>
+
+<div><%= notification.read %></div>
+<div>I am <%= notification.user.name %></div>
+<div><%= notification.sender_name %> Say: <%= notification.content %></div>
+<p>------------------------------------</p>
+<% end %>
