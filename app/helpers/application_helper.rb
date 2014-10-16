@@ -43,8 +43,7 @@ module ApplicationHelper
   def admin?
     if login?
       email = current_user.email.downcase
-      false
-      #CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
+      CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
     end
   end
 

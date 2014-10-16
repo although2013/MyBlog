@@ -1,0 +1,11 @@
+default: &default
+
+development:
+  <<: *default
+  admin_emails:
+    - 123@123.com
+
+production:
+  <<: *default
+  admin_emails:
+    # - admin@example.com
