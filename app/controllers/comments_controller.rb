@@ -1,8 +1,9 @@
 class CommentsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :signed_in_user, only: [:new, :create, :destroy]
   before_action :correct_user, only: :destroy
-  
+
   def index
+    @comments = current_user.comments.all
   end
 
   def new
@@ -17,8 +18,10 @@ class CommentsController < ApplicationController
     receive_users = find_receivers(@comment.content)
     
     for user in receive_users
-      u = User.find_by_name(user)
-      Notification.create(user_id:u.id, content: @comment.content, sender_name: @comment.user.name)
+      if User.exitsts?(:name => user)
+        u = User.find_by_name(user)
+        Notification.create(user_id:u.id, content: @comment.content, sender_name: @comment.user.name)
+      end
     end
 
     if @comment.save
@@ -29,9 +32,11 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-  end
-  
-  def update
+    if @comment.destroy
+      redirect_to comments_url, notice: '评论删除成功'
+    else
+      redirect_to comments_url, alert: '评论删除失败'
+    end
   end
   
 
@@ -41,9 +46,7 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:content, :user_id, :commentable_id)
     end
 
-    def notification_params
-      params.require(:comment).permit(:content, :user_id, :to)
-    end
+
 
     def correct_user
       @comment = current_user.comments.find_by(id: params[:id])

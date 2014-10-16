@@ -1,8 +1,6 @@
 <div class="center pad">
 
-  <% if flash[:error] %>
-    <div class="alert alert-danger" role="alert"><%= flash[:error] %></div>
-  <% end %>
+  <%= render "layouts/flash" %>
 
 <h1>登录您的帐户</h1>
 
@@ -20,7 +18,7 @@
         <%= f.submit "登 录", class: "btn btn-large btn-primary" %>
       <% end %>
       <br>
-      <p>还没有注册账户？  <%= link_to "现在注册!", '#'%></p>
+      <p>还没有注册账户？  <%= link_to "现在注册!", register_path %></p>
     </div>
 
   </div>

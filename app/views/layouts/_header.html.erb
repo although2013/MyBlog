@@ -5,7 +5,8 @@
         <li><a href="/photos">相册</a></li>
       </ul>
       <ul class="nav navbar-nav pull-right">
-        <% if signed_in? %>
+        
+        <% if signed_in? && !admin? %>
           <li id="fat-menu" class="dropdown pull-right" >
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-no-turbolink="true">我的账户<b class="caret"></b>
             </a>
@@ -17,12 +18,13 @@
               <li><%= link_to "退出登录", signout_path, method: "delete" %></li>
             </ul>
           </li>
-                <% if false %>
-                  <a href='microposts/new' id="upload_picture_button" class='btn btn-primary pull-right' role='button'>新的微博</a>
-                <% end %>
+
+        <% elsif signed_in? && admin? %>
+          <%= render 'layouts/admin' %>
+
         <% else %>
           <ul class="nav navbar-nav">
-            <li><%= link_to "我", login_url, class:'pull-right' %></li>
+            <li><%= link_to "登录", login_url, class:'pull-right' %></li>
           </ul>
         <% end %>
       </ul>

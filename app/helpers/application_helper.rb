@@ -39,4 +39,19 @@ module ApplicationHelper
       redirect_to login_path
     end
   end
+
+  def admin?
+    if login?
+      email = current_user.email.downcase
+      false
+      #CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
+    end
+  end
+
+  def admin_require
+    if !admin?
+      redirect_to root_path
+    end
+  end
+
 end

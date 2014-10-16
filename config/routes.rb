@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  resources :comments
+
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'microposts#index'

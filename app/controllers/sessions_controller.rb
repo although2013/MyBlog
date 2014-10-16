@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       sign_in user
       redirect_back_or root_path
     else
-      flash.now[:error] = '你输入的邮箱地址或密码有误，请重试。'
+      flash.now[:danger] = '你输入的邮箱地址或密码有误，请重试。'
       render 'new'
     end
   end
