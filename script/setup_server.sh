@@ -10,4 +10,7 @@ bundle install;
 sed -i "s/secret_key_base: \w\+/secret_key_base: `bundle exec rake secret`/g" config/secrets.yml;
 
 
+RAILS_ENV=production rake db:create db:migrate;
+RAILS_ENV=production rake assets:precompile;
+
 sudo service nginx restart;
