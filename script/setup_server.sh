@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 
-cp config/database.example.yml config/database.yml;
-cp config/secrets.example.yml config/secrets.yml;
-cp config/config.example.yml config/config.yml;
+cp config/database.sample.yml config/database.yml;
+cp config/secrets.sample.yml config/secrets.yml;
+cp config/config.sample.yml config/config.yml;
 
 bundle install;
 
