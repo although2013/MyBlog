@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     receive_users = find_receivers(@comment.content)
     
     for user in receive_users
-      if User.exitsts?(:name => user)
+      if User.exists?(:name => user)
         u = User.find_by_name(user)
         Notification.create(user_id:u.id, content: @comment.content, sender_name: @comment.user.name)
       end
