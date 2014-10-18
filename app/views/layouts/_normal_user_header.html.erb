@@ -1,0 +1,25 @@
+<li id="fat-menu" class="dropdown pull-right" >
+  <% unread_num = current_user.notifications.unread.count %>
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-no-turbolink="true">
+    我的账户
+      <% if unread_num > 0 %>
+        <span class="badge"><%= unread_num %></span>
+      <% end %>
+    <b class="caret"></b>
+  </a>
+  <ul class="dropdown-menu">
+    <li><%= link_to current_user.name, user_path(current_user) %></li>
+    <li><%= link_to "设置", edit_user_path(current_user) %></li>
+
+    <li>
+      <%= link_to notifications_url do %>
+        通知&nbsp;&nbsp;&nbsp;
+        <% if unread_num > 0 %>
+          <span class="badge pull-rught">&nbsp;<%= unread_num %>&nbsp;</span>
+        <% end %>
+      <% end %>
+    </li>
+    <li class="divider"></li>
+    <li><%= link_to "退出登录", signout_path, method: "delete" %></li>
+  </ul>
+</li>

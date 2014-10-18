@@ -1,0 +1,7 @@
+<div><%= link_to "@#{notification.sender_name}", User.find_by_name(notification.sender_name) %>:</div>
+<div class="noti-con"><%= notification.content %></div>
+<div><%= link_to "查看", notification.link_back%> &nbsp;&nbsp;&nbsp;
+  <span class="time_ago pull-right">
+    发生于<%= time_ago_in_words(notification.created_at) %>前
+  </span>
+</div>
