@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 
   def create
     resource, id = request.path.split('/')[1, 2]
+ 
     @commentable = resource.singularize.classify.constantize.find(id)
     @comment = @commentable.comments.new params.require(:comment).permit(:content).merge(user: current_user)
 
@@ -20,12 +21,12 @@ class CommentsController < ApplicationController
     for user in receive_users
       if User.exists?(:name => user)
         u = User.find_by_name(user)
-        Notification.create(user_id:u.id, content: @comment.content, sender_name: @comment.user.name)
+        Notification.create(user_id:u.id, content: @comment.content, sender_name: @comment.user.name, link_back:"#{resource}/#{id}" )
       end
     end
 
     if @comment.save
-      redirect_to @commentable, notice: '评论成功'
+      redirect_to @commentable, success: '评论成功'
     else
       render :new
     end
@@ -33,7 +34,7 @@ class CommentsController < ApplicationController
   
   def destroy
     if @comment.destroy
-      redirect_to comments_url, notice: '评论删除成功'
+      redirect_to comments_url, success: '评论删除成功'
     else
       redirect_to comments_url, alert: '评论删除失败'
     end

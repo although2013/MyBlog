@@ -1,7 +1,14 @@
-<%= form_for @photo, :html => {:multipart => true} do |f| %>
-  <%= f.label :name, '图片简介' %>:
-  <%= f.text_field :name %><br>
+<div class="center pad">
+<%= render "layouts/flash" %>
+  <div class="my_form">
 
-  <%= f.file_field :picture %>
-  <%= f.submit "Upload" %>
-<% end %>
+    <%= form_for @photo, :html => {:multipart => true} do |f| %>
+      <%= f.label :name, '图片简介' %>:
+      <%= f.text_field :name, :class => "form-control" %><br>
+
+      <%= f.file_field :picture %><br>
+
+      <%= f.submit "上 传", class: "btn btn-large btn-primary"%>
+    <% end %>
+  </div>
+</div>

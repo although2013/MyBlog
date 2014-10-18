@@ -1,17 +1,14 @@
 <div class="row">
-  <div class="span6 offset3">
-    <div class="micropost_form">
-
-        <%= form_for(@micropost, class:"form-horizontal")  do |f|%>
-          <div class="form-group">
-            <%= f.label :content %><br>
-            <%= f.text_area :content, :class => "form-control"%>
-          </div>
-          
-          <div class="actions">
-            <%= f.submit :class => "btn btn-primary"%>
-          </div>
-        <% end %>
-    </div>
+  <div class="micropost_form">
+    <%= form_for(@micropost, class:"form-horizontal")  do |f|%>
+      <div class="form-group">
+        <%= f.label :content, "微博内容" %><br>
+        <%= f.text_area :content, :class => "form-control"%><br>
+      </div>
+      
+      <div class="actions">
+        <%= f.submit "发 送", :class => "btn btn-primary"%>
+      </div>
+    <% end %>
   </div>
 </div>

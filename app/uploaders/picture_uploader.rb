@@ -28,24 +28,27 @@ class PictureUploader < CarrierWave::Uploader::Base
 
   def big_image_detail
     manipulate! do |img|
-      if img.columns > img.rows
-        if img.columns > 900
-          i = img.columns / 800
-          img.resize_to_fill! img.columns/i, img.rows/i
+      if img.columns > img.rows/2.2
+        if img.columns > img.rows
+          if img.columns > 900
+            i = img.columns / 800
+            img.resize_to_fill! img.columns/i, img.rows/i
+          else
+            img
+          end
         else
-          img
+          if img.rows >= 700
+            i = img.rows / 600
+            img.resize_to_fill! img.columns/i, img.rows/i
+          else
+            img
+          end
         end
       else
-        if img.rows >= 700
-          i = img.rows / 600
-          img.resize_to_fill! img.columns/i, img.rows/i
-        else
-          img
-        end
+        img
       end
     end
   end
-
   
   def extension_white_list
     %w(jpg jpeg gif png)

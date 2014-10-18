@@ -1,8 +1,20 @@
-<% @notifications.each do |notification| %>
-<p>------------------------------------</p>
+  <div class="center">
+    <% @notifications.unread.each do |notification| %>
+      <div class="panel panel-default">
+        <div class="panel-body">
+        <%= render :partial => 'card', locals: {notification: notification}%>
+      </div>
+    <% end %>
+  </div>
 
-<div><%= notification.read %></div>
-<div>I am <%= notification.user.name %></div>
-<div><%= notification.sender_name %> Say: <%= notification.content %></div>
-<p>------------------------------------</p>
-<% end %>
+
+
+  <div class="center">
+    <% @notifications.has_read.each do |notification| %>
+      <div class="panel panel-default">
+        <div class="panel-body has_read">
+          <%= render :partial => "card", locals: {notification: notification}%>
+        </div>
+      </div>
+    <% end %>
+  </div>

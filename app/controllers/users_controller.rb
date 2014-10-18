@@ -1,47 +1,48 @@
 class UsersController < ApplicationController
+  before_action :signed_in_user, only: [:show, :edit, :update]
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :signed_in_user, only: [:edit, :update]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_require, only: [:index, :destroy]
-  # GET /users
-  # GET /users.json
+
+
   def index
     @users = User.all
   end
 
   def show
+
   end
 
-  # GET /users/new
+
   def new
     @user = User.new
   end
 
-  # GET /users/1/edit
+
   def edit
   end
 
-  # POST /users
-  # POST /users.json
+
   def create
     @user = User.new(user_params)
 
     if @user.save
+      sign_in @user
       flash[:success] = "注册成功！"
       redirect_to @user
     else
+      flash[:danger] = "注册失败！"
       render 'new'
     end
   end
 
-  def edit
-  end
 
   def update
     if @user.update_attributes(user_params)
-      flash[:success] = "Profile updated"
+      flash[:success] = "修改成功！"
       redirect_to @user
     else
+      flash[:danger] = "修改失败！"
       render 'edit'
     end
   end

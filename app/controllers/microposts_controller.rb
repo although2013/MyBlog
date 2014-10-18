@@ -4,7 +4,6 @@ class MicropostsController < ApplicationController
   before_action :admin_require, only: [:new, :create, :edit, :update, :destroy]
   def index
     @microposts = Micropost.paginate(page: params[:page]).per_page(15)
-    
   end
 
 

@@ -1,6 +1,8 @@
-<h1>Editing user</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+<div class="center pad">
+<%= render "layouts/flash" %>
+  <h1>修改个人资料</h1>
+  <%= render 'form' %>
+  
+  <%= link_to '查看资料', @user %> |
+  <%= link_to '返回主页', root_url %>
+</div>

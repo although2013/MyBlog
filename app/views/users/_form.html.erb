@@ -1,19 +1,23 @@
-<div class="register_form">
+<div class="my_form">
 <%= form_for(@user) do |f| %>
 
     <%= f.label "用户名" %>
-    <%= f.text_field :name ,class:'form-control input_short'%><br>
+    <%= f.text_field :name ,class:'form-control input_short' %><br>
 
-    <%= f.label "邮箱地址" %>
-    <%= f.text_field :email ,class:'form-control input_short' %><br>
-
+    <% if current_user %>
+      <%= f.label "邮箱地址" %>
+      <%= f.text_field :email ,class:'form-control input_short' %><br>
+    <% else %>
+      <%= f.label "邮箱地址" %>
+      <%= f.text_field :email ,class:'form-control input_short' %><br>
+    <% end %>
     <%= f.label :password, "输入密码" %>
     <%= f.password_field :password, class:'form-control input_short' %><br>
 
     <%= f.label :password, "再次输入密码" %>
     <%= f.password_field :password_confirmation, class:'form-control input_short' %><br>
 
-    <%= f.submit "注册用户", class: "btn btn-large btn-primary"%>
+    <%= f.submit "注册用户", class: "btn btn-large btn-primary"%><br>
 
 <% end %>
 </div>

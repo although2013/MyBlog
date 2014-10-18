@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20141015124224) do
     t.boolean  "read",        default: false
     t.string   "content"
     t.string   "sender_name"
+    t.string   "link_back"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

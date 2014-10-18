@@ -50,10 +50,12 @@ module SessionsHelper
   end
 
   def writed_comments
+    #call in comments/form
     session[:comment_body]
   end
 
   def delete_writed_comments
+    #call in comments/form
     session.delete(:comment_body)
   end
 

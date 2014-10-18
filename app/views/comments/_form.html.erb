@@ -4,6 +4,7 @@
       <%= f.label :content, '写个评论:' %><br>
 
       <%= f.text_area :content, :class => "form-control", :value => writed_comments %>
+      <%# call from session_helper %>
       <% delete_writed_comments %>
     </div>
   

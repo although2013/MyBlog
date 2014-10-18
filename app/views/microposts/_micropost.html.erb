@@ -4,6 +4,11 @@
   </div>
   <div class="panel-footer">
     <ul>
+      <% if admin? %>
+        <li>
+          <%= link_to "修改", edit_micropost_path(micropost) %>
+        </li>
+      <% end %>
       <li>
         <%= link_to "评论 #{micropost.comments.count}", micropost_path(micropost) %>
       </li>

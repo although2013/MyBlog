@@ -12,11 +12,12 @@ class PhotosController < ApplicationController
 
   def create
     @photo = Photo.new(photo_params)
-
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: '图片上传成功' }
-      end
+    if @photo.save
+      flash[:success] = '图片上传成功'
+      redirect_to @photo
+    else
+      flash.now[:danger] = '图片上传失败'
+      render 'new'
     end
   end
 
