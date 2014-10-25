@@ -3,7 +3,12 @@
 
 cp config/database.sample.yml config/database.yml;
 cp config/secrets.sample.yml config/secrets.yml;
-cp config/config.sample.yml config/config.yml;
+
+if [ -f config/config.yml ]; then
+  echo "'config.yml' already exist"
+else
+  cp config/config.sample.yml config/config.yml;
+fi
 
 bundle install;
 

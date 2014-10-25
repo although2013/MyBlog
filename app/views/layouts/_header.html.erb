@@ -26,11 +26,9 @@
         <% elsif signed_in? && admin? %>
           <%= render 'layouts/admin_header' %>
         <% else %>
-          <ul class="nav navbar-nav">
-            <li>
-              <%= link_to "登录", login_url, class:'pull-right' %>
-            </li>
-          </ul>
+          <li>
+            <%= link_to "登录", login_url %>
+          </li>
         <% end %>
       </ul>
     </div>
