@@ -1,23 +1,39 @@
-<header class="navbar navbar-fixed-top navbar-default" role="navigation">
-    <nav>
-      <ul class="nav navbar-nav" >
+<header>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-header">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" >MyBlog</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="navbar-collapse-header">
+      <ul class="nav navbar-nav">
         <li><a href="/microposts">微博</a></li>
         <li><a href="/photos">相册</a></li>
       </ul>
-      <ul class="nav navbar-nav pull-right">
-        
+      
+
+      <ul class="nav navbar-nav navbar-right">
         <% if signed_in? && !admin? %>
           <%= render 'layouts/normal_user_header' %>
-
         <% elsif signed_in? && admin? %>
           <%= render 'layouts/admin_header' %>
-
         <% else %>
-
           <ul class="nav navbar-nav">
-            <li><%= link_to "登录", login_url, class:'pull-right' %></li>
+            <li>
+              <%= link_to "登录", login_url, class:'pull-right' %>
+            </li>
           </ul>
         <% end %>
       </ul>
-  </nav>
+    </div>
+  </div>
+</nav>
 </header>

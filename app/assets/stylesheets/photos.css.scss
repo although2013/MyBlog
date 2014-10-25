@@ -1,12 +1,28 @@
 
 .album-container {
   padding-top: 40px;
+  max-width: 1020px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #upload_picture_button {
   margin-top: 3px;
 }
 
-body {
-  padding-bottom: 30px
+
+.thumbnail {
+  padding: 5px 5px 0px 5px;
+  max-width: 370px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+
+.caption h5 {
+  text-align: center;
+}
+
+.img-detail {
+  padding-top: 30px;
 }
