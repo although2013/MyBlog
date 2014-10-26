@@ -1,7 +1,13 @@
 <div class="center pad">
 <%= render "layouts/flash" %>
   <h1>修改个人资料</h1>
+  <%= image_tag @user.avatar_url.to_s %>
+
+  <%= f.label "avatar" %>
+  <%= f.file_field :avatar %><br>
+
   <%= render 'form' %>
+
   
   <%= link_to '查看资料', @user %> |
   <%= link_to '返回主页', root_url %>

@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :signed_in_user, only: [:show, :edit, :update]
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :edit_avatar, :update, :destroy]
   before_action :correct_user, only: [:edit, :update]
   before_action :admin_require, only: [:index, :destroy]
 
@@ -47,6 +47,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit_avatar
+    
+  end
+
 
 
   def destroy
@@ -65,7 +69,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:avatar, :name, :email, :password, :password_confirmation)
     end
 
     def signed_in_user

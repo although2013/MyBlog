@@ -9,7 +9,7 @@ class MicropostsController < ApplicationController
 
   def show
     @micropost = Micropost.find(params[:id])
-    @comments = @micropost.comments.all
+    @comments = @micropost.comments.includes(:user).all
     @comment = Comment.new
   end
 

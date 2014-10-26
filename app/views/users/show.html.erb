@@ -3,7 +3,10 @@
 <br>
   <h1>用户资料</h1>
 <br>
-<br>  
+<br>
+    <%= image_tag @user.avatar_url(:big).to_s %>
+    <%= link_to 'change Avatar',edit_avatar_path %>
+
 
     <strong>名字:</strong>
     <%= @user.name %>

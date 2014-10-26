@@ -10,6 +10,8 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :notifications, dependent: :destroy
 
+  mount_uploader :avatar, AvatarUploader
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end

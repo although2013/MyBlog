@@ -1,5 +1,7 @@
 <div class="my_form">
-<%= form_for(@user) do |f| %>
+  <%= form_for @user, :html => {:multipart => true} do |f| %>
+    <%= f.label '头像图片'%>
+    <%= f.file_field :avatar %><br>
 
     <%= f.label "用户名" %>
     <%= f.text_field :name ,class:'form-control input_short' %><br>
@@ -19,6 +21,6 @@
 
     <%= f.submit "注册用户", class: "btn btn-large btn-primary"%><br>
 
-<% end %>
+  <% end %>
 </div>
 
