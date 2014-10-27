@@ -4,8 +4,8 @@
   <h1>用户资料</h1>
 <br>
 <br>
-    <%= image_tag @user.avatar_url(:big).to_s %>
-    <%= link_to 'change Avatar',edit_avatar_path %>
+    <%=link_to image_tag(@user.avatar_url(:big).to_s), edit_avatar_path %><br>
+
 
 
     <strong>名字:</strong>
@@ -18,7 +18,7 @@
     </p>
 <br>
   
-  <%= link_to '修改资料 | ', edit_user_path(@user) if current_user == @user%>
+  <%= link_to '修改资料', edit_user_path(@user) if current_user == @user%> | 
   <%= link_to '返回主页', root_url %>
   
 </div>

@@ -1,12 +1,31 @@
 <div class="center pad">
 <%= render "layouts/flash" %>
   <h1>修改个人资料</h1>
-  <%= image_tag @user.avatar_url.to_s %>
+  <% if !@user.avatar.blank? %>
+    <%= image_tag @user.avatar_url(:small).to_s %>
+    <%= link_to 'change Avatar', edit_avatar_path %>
+  <% end %>
 
-  <%= f.label "avatar" %>
-  <%= f.file_field :avatar %><br>
 
-  <%= render 'form' %>
+  <%= form_for @user, :html => {:multipart => true} do |f| %>
+    <%= f.label '上传新头像'%>
+    <%= f.file_field :avatar %><br>
+
+    <%= f.label "用户名" %>
+    <%= f.text_field :name, class:'form-control input_short' %><br>
+
+    <%= f.label "邮箱地址" %>
+    <%= f.text_field :email, class:'form-control input_short' %><br>
+
+    <%= f.label :password, "输入密码" %>
+    <%= f.password_field :password, class:'form-control input_short' %><br>
+
+    <%= f.label :password, "再次输入密码" %>
+    <%= f.password_field :password_confirmation, class:'form-control input_short' %><br>
+
+    <%= f.submit "保存", class: "btn btn-large btn-primary"%><br>
+
+  <% end %>
 
   
   <%= link_to '查看资料', @user %> |

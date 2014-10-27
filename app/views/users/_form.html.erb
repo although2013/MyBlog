@@ -4,15 +4,11 @@
     <%= f.file_field :avatar %><br>
 
     <%= f.label "用户名" %>
-    <%= f.text_field :name ,class:'form-control input_short' %><br>
+    <%= f.text_field :name, class:'form-control input_short' %><br>
 
-    <% if current_user %>
-      <%= f.label "邮箱地址" %>
-      <%= f.text_field :email ,class:'form-control input_short' %><br>
-    <% else %>
-      <%= f.label "邮箱地址" %>
-      <%= f.text_field :email ,class:'form-control input_short' %><br>
-    <% end %>
+    <%= f.label "邮箱地址" %>
+    <%= f.text_field :email, class:'form-control input_short' %><br>
+
     <%= f.label :password, "输入密码" %>
     <%= f.password_field :password, class:'form-control input_short' %><br>
 

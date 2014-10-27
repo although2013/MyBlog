@@ -28,35 +28,42 @@ class UsersController < ApplicationController
 
     if @user.save
       sign_in @user
-      flash[:success] = "注册成功！"
-      redirect_to @user
+      if params[:user][:avatar].present?
+        render :edit_avatar
+      else
+        flash[:success] = "注册成功！"
+        redirect_to @user
+      end
     else
       flash[:danger] = "注册失败！"
-      render 'new'
+      render :new
     end
   end
 
 
   def update
+
     if @user.update_attributes(user_params)
-      flash[:success] = "修改成功！"
-      redirect_to @user
+      if params[:user][:avatar].present?
+        render :edit_avatar
+      else
+        flash[:success] = "修改成功！"
+        redirect_to @user
+      end
     else
       flash[:danger] = "修改失败！"
-      render 'edit'
+      render :edit
     end
   end
 
-  def edit_avatar
-    
-  end
+
 
 
 
   def destroy
     @user.destroy
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      format.html { redirect_to users_url, success: 'User was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -69,11 +76,11 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:avatar, :name, :email, :password, :password_confirmation)
+      params.require(:user).permit(:avatar, :name, :email, :password, :password_confirmation, :crop_x, :crop_y, :crop_w, :crop_h)
     end
 
     def signed_in_user
-      redirect_to signin_url, notice: "Please sign in." unless signed_in?
+      redirect_to login_url, danger: "Please sign in." unless signed_in?
     end
 
     def correct_user

@@ -14,37 +14,28 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
 
   version :small do
+    process :crop
     process :resize_to_fill => [45, 45]
   end
 
   version :big do
+    process :crop
     process :resize_to_fill => [240, 240]
   end
 
   version :not_edit do
-    process :edit_avatar
+    resize_to_limit(500,500)
   end
 
-  def edit_avatar
-    manipulate! do |img|
-      if img.columns > img.rows/2.2
-        if img.columns > img.rows
-          if img.columns > 700
-            i = img.columns / 500
-            img.resize_to_fill! img.columns/i, img.rows/i
-          else
-            img
-          end
-        else
-          if img.rows >= 550
-            i = img.rows / 350
-            img.resize_to_fill! img.columns/i, img.rows/i
-          else
-            img
-          end
-        end
-      else
-        img
+  def crop
+    if model.crop_x.present?
+      manipulate! do |img|
+        resize_to_limit(500,500)
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        img.crop!(x,y,w,h)
       end
     end
   end

@@ -82,11 +82,11 @@
       max-height: 214px;
     }
   </style>
-<div class="container-fluid eg-container" id="basic-example">
+  <div class="container-fluid eg-container" id="basic-example">
     <div class="row eg-main">
       <div class="col-xs-12 col-sm-9">
         <div class="eg-wrapper">
-          <%= image_tag @user.avatar_url.to_s, class:"cropper"%>
+          <%= image_tag @user.avatar_url.to_s, class:"cropper" %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-3">
@@ -97,12 +97,18 @@
 
         </div>
         <div class="eg-data">
-          
-          <input class="form-control" id="dataX" type="hidden">
-          <input class="form-control" id="dataY" type="hidden">
-          <input class="form-control" id="dataWidth" type="hidden">
-          <input class="form-control" id="dataHeight" type="hidden">
+          <%= form_for @user do |f| %>
 
+            <%= f.hidden_field :crop_x, :id =>'dataX'  %>
+            <%= f.hidden_field :crop_y, :id =>'dataY'  %>
+            <%= f.hidden_field :crop_w, :id =>'dataWidth'  %>
+            <%= f.hidden_field :crop_h, :id =>'dataHeight'  %>
+            
+            <%= f.hidden_field :name, class:'form-control input_short' %>
+            <%= f.hidden_field :email, class:'form-control input_short' %>
+            
+            <%= f.submit "剪切!", class: "btn btn-large btn-primary"%><br>
+          <% end %>
           </div>
         </div>
       </div>
