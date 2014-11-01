@@ -6,10 +6,12 @@
   </div>
 </div>
 <div class="pad">
-  <div class="comment_all">
     <% @comments.each do |comment| %>
-      <div class="comment_line">
-        <%=link_to "@#{comment.user.name}  ", comment.user %> &nbsp;<%= comment.content %>
+      <div class="comment_card">
+        <%= image_tag comment.user.avatar_url(:small).to_s, class:"avatar" %>
+        <div class="text">
+          <%=link_to "@#{comment.user.name}  ", comment.user %> &nbsp;<%= comment.content %>
+        </div>
       </div>
     <% end %>
   </div>

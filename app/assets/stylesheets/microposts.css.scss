@@ -1,3 +1,6 @@
+.index-hold {
+  max-width: 1060px;
+}
 
 .admin-pro {
   min-width: 260px;
@@ -45,10 +48,10 @@
 }
 
 #content {
-  max-width: 560px;
-  padding-left: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 600px;
 }
-
 
 
 div.panel {
@@ -57,7 +60,7 @@ div.panel {
   border:1px solid #dddddd;
 }
 
-panel-default {
+.panel-default {
   padding-bottom:0px;
   margin-bottom:0px;
 }
@@ -91,6 +94,7 @@ panel-default {
 
 .comment_newest {
   padding-top:5px;
+  padding-right: 10px;
 }
 
 .fetching_more_microposts {
@@ -112,20 +116,30 @@ panel-default {
   margin-right: auto;
 }
 
-#micropost_content {
+.micropost_content {
+  padding-top: 10px;
   padding-left:12px;
   padding-right:20px;
-  font-size:18px;
+  font-size:19px;
   line-height:30px;
-
 }
 
-.comment_all{
-  padding-top:25px;
-  padding-left:30px;
+.comment_card {
+  padding-top:15px;
+  padding-right: 15px;
 }
 
-.comment_line {
+.comment_card > .avatar {
+  border-radius: 5px;
+  float: left;
+  margin-top: 5px;
+  min-width: 45px;
+  min-height: 45px;
+}
+
+.comment_card > .text {
+  margin: 0px;
+  padding-left: 50px;
   font-size:15px;
   padding-bottom:10px;
 }
