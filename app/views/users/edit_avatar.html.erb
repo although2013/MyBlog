@@ -86,7 +86,7 @@
     <div class="row eg-main">
       <div class="col-xs-12 col-sm-9">
         <div class="eg-wrapper">
-          <%= image_tag @user.avatar_url.to_s, class:"cropper" %>
+          <%= image_tag @user.avatar_url(:not_edit).to_s, class:"cropper" %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-3">

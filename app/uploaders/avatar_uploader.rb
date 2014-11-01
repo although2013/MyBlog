@@ -24,13 +24,13 @@ class AvatarUploader < CarrierWave::Uploader::Base
   end
 
   version :not_edit do
-    resize_to_limit(500,500)
+    resize_to_fit(500,500)
   end
 
   def crop
     if model.crop_x.present?
       manipulate! do |img|
-        resize_to_limit(500,500)
+        img = img.resize_to_fit(500,500)
         x = model.crop_x.to_i
         y = model.crop_y.to_i
         w = model.crop_w.to_i

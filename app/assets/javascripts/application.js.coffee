@@ -6,6 +6,7 @@
 #= require nprogress
 #= require nprogress-turbolinks
 #= require bootstrap
+#= require cropper
 
 
 page_endless = () ->

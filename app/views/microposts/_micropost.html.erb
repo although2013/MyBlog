@@ -20,7 +20,7 @@
   <% if !micropost.comments.blank? %>
     <div class="comments_index">
       <% comment = micropost.comments.first %>
-      <p class="comment_newest">最新: <%= link_to comment.user.name, comment.user %>: <%= comment.content%></p>
+      <p class="comment_newest"> <%= link_to comment.user.name, comment.user %>&nbsp; <%= comment.content %> </p>
     </div>
   <% end %>
 </div>
