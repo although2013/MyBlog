@@ -1,7 +1,18 @@
 @import "bootstrap";
+.row {
+  margin:0px;
+}
+
 .my_form {
   padding-top:30px;
   padding-left:40px;
   padding-right: 30px;
   padding-bottom:10px;
+}
+
+div.divider {
+  height: 1px;
+  margin: 9px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
 }

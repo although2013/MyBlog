@@ -47,6 +47,13 @@ module ApplicationHelper
     end
   end
 
+  def admin_user
+    if CONFIG['admin_emails']
+      user = User.find_by_email(CONFIG['admin_emails'][0])
+    end
+    return user
+  end
+
   def admin_require
     if !admin?
       redirect_to root_path

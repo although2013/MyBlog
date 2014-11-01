@@ -3,9 +3,10 @@
   <h1>修改个人资料</h1>
   <% if !@user.avatar.blank? %>
     <%= image_tag @user.avatar_url(:small).to_s %>
-    <%= link_to 'change Avatar', edit_avatar_path %>
+    <%= link_to '重新剪切头像', edit_avatar_path %>
   <% end %>
-
+<br>
+<br>
 
   <%= form_for @user, :html => {:multipart => true} do |f| %>
     <%= f.label '上传新头像'%>

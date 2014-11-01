@@ -49,8 +49,6 @@
       height: 48px;
     }
 
-    
-
     .eg-data {
       padding-right: 15px;
     }
@@ -107,7 +105,10 @@
             <%= f.hidden_field :name, class:'form-control input_short' %>
             <%= f.hidden_field :email, class:'form-control input_short' %>
             
-            <%= f.submit "剪切!", class: "btn btn-large btn-primary"%><br>
+            <%= f.submit "剪切 !", class: "btn btn-large btn-primary"%>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <%= link_to '取消', @user, class:'btn btn-danger' %><br>
           <% end %>
           </div>
         </div>

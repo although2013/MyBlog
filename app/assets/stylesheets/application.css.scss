@@ -1,9 +1,8 @@
-
 #= require_tree .
 #= require nprogress
 #= require nprogress-bootstrap
 #= require cropper
-
+#= require_self
 
 .headroom { position:fixed; z-index:+1; top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
 .headroom--unpinned {top: -100px;}
@@ -14,7 +13,7 @@ body {
   padding-top: 60px;
   padding-bottom: 30px;
 
-  font-family: Georgia, "Times New Roman", 
+  font-family: Helvetica, "Times New Roman", 
              "Microsoft YaHei", "微软雅黑", 
              STXihei, "华文细黑", 
              serif;

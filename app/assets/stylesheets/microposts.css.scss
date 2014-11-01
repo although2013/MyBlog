@@ -1,33 +1,54 @@
 
-.container {
-  min-width: 150px;
-  max-width: 750px;
-  margin-left: auto;
-  margin-right: auto;
+.admin-pro {
+  min-width: 260px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+  background-color: white;
+}
 
+.admin-pro > #fullname {
+  font-family:"Times New Roman";
+  padding-top: 5px;
+  font-size: 32px;
+}
+
+.admin-pro > #username {
+  font-size: 25px;
+  color:#959595;
+}
+
+.admin-pro > #location {
+  line-height: 200%;
+  font-size: 16px;
+}
+
+.admin-pro > #join-time {
+  line-height: 200%;
+  font-size: 16px;
 }
 
 
-.main_body ul {
+#content ul {
   margin: 0;
   list-style: none;
   padding: 0;
   text-align:right
 }
 
-.main_body li {
+#content li {
   line-height:20px;
   margin:5px 4px;
   text-align:center;
   display: inline;
-
 }
 
-
-.main_body {
-  padding-top: 10px;
-  max-width:550px;
+#content {
+  max-width: 560px;
+  padding-left: 40px;
 }
+
 
 
 div.panel {

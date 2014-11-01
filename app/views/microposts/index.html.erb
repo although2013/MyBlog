@@ -1,9 +1,16 @@
-<div class="container main_body">
-  <div class="row" id="content">
-    <%= render @microposts %>
+<div class="container">
+  <div class="col-md-3">
+    <%= render 'layouts/admin_profile' %>
   </div>
 
-  <div align="center">
-    <%= will_paginate @microposts %>
+  <div class="col-md-9">
+
+    <div class="row" id="content">
+      <%= render @microposts %>
+    </div>
+
+    <div align="center">
+      <%= will_paginate @microposts %>
+    </div>
   </div>
 </div>

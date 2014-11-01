@@ -7,7 +7,7 @@
 #= require nprogress-turbolinks
 #= require bootstrap
 #= require cropper
-
+#= require_self
 
 page_endless = () ->
   if $('.pagination').length
@@ -23,6 +23,9 @@ page_endless = () ->
 
 $(document).on 'page:change', ->
   $("header").headroom();
+
+  if $(window).width() < 992
+    $('.admin-pro').hide();
 
   page_endless();
   
