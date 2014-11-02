@@ -116,6 +116,8 @@ div.panel {
   margin-right: auto;
 }
 
+// .micropost_content is in micropost#show => for micropost text
+
 .micropost_content {
   padding-top: 10px;
   padding-left:12px;
@@ -151,4 +153,10 @@ div.panel {
   padding-left:40px;
   padding-right: 30px;
   padding-bottom:10px;
+}
+
+// #micropost_content is in micropost#new => for form-control
+
+#micropost_content {
+  height:80px;
 }
