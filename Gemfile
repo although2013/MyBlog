@@ -10,6 +10,8 @@ gem 'rmagick'
 
 gem 'bcrypt'
 
+gem 'font-awesome-sass'
+
 # Hide your header until you need it.
 gem 'headroom-rails'
 

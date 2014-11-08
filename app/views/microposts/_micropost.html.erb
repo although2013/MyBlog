@@ -1,4 +1,4 @@
-<div class="panel panel-default micropost">
+<div class="panel panel-default">
   <div class="panel-body">
     <%= micropost.content %>
   </div>
@@ -10,17 +10,11 @@
         </li>
       <% end %>
       <li>
-        <%= link_to "评论 #{micropost.comments.count}", micropost_path(micropost) %>
+        <%= link_to content_tag(:i, " 评论 #{micropost.comments_count}", :class => "fa fa-comments"), micropost_path(micropost), class:"link-to-comment" %>
       </li>
       <li>
         <%= time_ago_in_words(micropost.created_at) %>
       </li>
     </ul>
   </div>
-  <% if !micropost.comments.blank? %>
-    <div class="comments_index">
-      <% comment = micropost.comments.first %>
-      <p class="comment_newest"> <%= link_to comment.user.name, comment.user %>&nbsp; <%= comment.content %> </p>
-    </div>
-  <% end %>
 </div>

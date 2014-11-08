@@ -1,4 +1,4 @@
-@import "bootstrap";
+
 .row {
   margin:0px;
 }
@@ -15,4 +15,13 @@ div.divider {
   margin: 9px 0;
   overflow: hidden;
   background-color: #e5e5e5;
+}
+
+.btn {
+  border-radius: 2px;
+  border:0px;
+  background-color:#205EC9;
+      &:hover {
+        background-color:#1F64DB;
+      }
 }

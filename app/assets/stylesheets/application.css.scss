@@ -1,8 +1,29 @@
-#= require_tree .
+
 #= require nprogress
 #= require nprogress-bootstrap
 #= require cropper
 #= require_self
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+@import 'microposts';
+@import 'comments';
+@import 'custom';
+@import 'notifications';
+@import 'photos';
+@import 'sessions';
+@import 'users';
+
+
+$hover-color:white;
+$blue:#176BBF;
+
+$hover-background:#176BBF;
+
 
 .headroom { position:fixed; z-index:+1; top: 0;left: 0;right: 0;transition: all .2s ease-in-out;}
 .headroom--unpinned {top: -100px;}
@@ -37,15 +58,43 @@ header {
   max-width: 1100px;
 }
 
+.navbar-default .navbar-nav > .active > a {
+  color:$blue;
+  background-color:$hover-background;
+      &:hover {
+          color: $hover-color;
+          background-color:$hover-background;
+      }
+}
 
-
-.nav > li > a {
-  padding: 16px 20px 15px 25px;
+.navbar-default .navbar-nav > li > a {
+  color: $blue;  
+      &:hover {
+          color: $hover-color;
+          background-color: $hover-background;
+      }
 
 }
 
+.navbar-default .navbar-nav > .open > a:focus {
+      color: $hover-color;
+      background-color: $hover-background;
+}
+
+
+.navbar-default .navbar-brand {
+  color: $blue;
+      &:hover {
+          color: $blue;
+      }
+}
+
+.nav > li > a {
+  padding: 16px 22px 15px 22px;
+}
+
 .navbar-brand {
-  padding: 16px 15px 15px 25px;
+  padding: 16px 22px 15px 22px;
 }
 
 
@@ -53,3 +102,41 @@ header {
   background-color: #176BBF;
   color: white;
 }
+
+a {
+  color:$blue;
+}
+
+
+
+.dropdown-menu > li > a {
+  color:$blue;
+}
+
+
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color:$blue;
+  &:hover {
+          color: $hover-color;
+          background-color: $hover-background;
+      }
+
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color:white;
+}
+
+.navbar-nav .open .dropdown-menu {
+  border:2px black;
+}
+
+.fa-bars {
+  color:$blue;
+
+}
+
+.navbar-toggle {
+  border: 0px;
+}
+
