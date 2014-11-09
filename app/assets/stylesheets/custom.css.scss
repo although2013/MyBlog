@@ -25,3 +25,10 @@ div.divider {
         background-color:#1F64DB;
       }
 }
+
+.btn-danger {
+  background-color:#d43f3a;
+      &:hover {
+        background-color:#d9534f;
+      }
+}

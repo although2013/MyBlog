@@ -12,7 +12,7 @@
           <%= link_to "修改", edit_micropost_path(micropost) %>
         </li>
       <% end %>
-      <li>
+      <li data-toggle="tooltip" data-placement="bottom" title="查看评论">
         <%= link_to content_tag(:i, " 评论 #{count}", :class => "fa fa-comments"), micropost_path(micropost), class:"link-to-comment" %>
       </li>
       <li>

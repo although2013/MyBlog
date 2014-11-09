@@ -5,13 +5,13 @@
         <% if !item.picture.blank? %>
           <div class="col-sm-6 col-md-3">
             <div class="thumbnail">
-                <%= link_to image_tag(item.picture_url(:thumb).to_s), item%>
+                <%= link_to image_tag(item.picture_url(:thumb).to_s), item %>
               <div class="caption">
-              <% if !item.name.blank? %>
-                <h5><%= item.name %></h5>
-              <% else %>
-                <h5>&nbsp;</h5>
-              <% end %> 
+                <% if !item.name.blank? %>
+                  <h5><%= item.name %></h5>
+                <% else %>
+                  <h5>&nbsp;</h5>
+                <% end %>
               </div>
             </div>
           </div>
