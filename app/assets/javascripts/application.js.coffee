@@ -14,7 +14,8 @@ page_endless = () ->
     $(window).scroll ->
       url = $('.pagination .next_page a').attr('href')
       if url && $(window).scrollTop() > $(document).height() - $(window).height() - 150
-        $('.pagination').html("<div class='fetching_more_microposts'>获取更多微博中...</div>")
+        $('.pagination').html("
+        <div class='fetching_more_microposts'><i class='fa fa-spinner fa-spin fa-3x'></i></div>")
         $.getScript(url)
     $(window).scroll()
 

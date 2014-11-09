@@ -13,12 +13,3 @@ changeBorderColor = ->
 
 $(document).bind("DOMSubtreeModified", changeBorderColor)
 
-
-
-# hide admin-profile when window.width < 992
-
-$(window).resize ->
-  if $(this).width() < 992 
-    $('.admin-pro').hide();
-  else
-    $('.admin-pro').show();

@@ -2,7 +2,7 @@
 <div class="pad">
 <%= render 'layouts/flash' %>
   <div class="micropost_content">
-    <%= @micropost.content %>
+    <%= sanitize @micropost.content %>
   </div>
 </div>
 <div class="pad">
@@ -11,7 +11,7 @@
         <%= image_tag comment.user.avatar_url(:small).to_s, class:"avatar" %>
         <div class="text">
           <strong><%= link_to "#{comment.user.name}", comment.user %></strong> 
-          <div class="comment-content"><%= comment.content %></div>
+          <div class="comment-content"><%= sanitize comment.content %></div>
         </div>
       </div>
       <div class="divider"></div>
