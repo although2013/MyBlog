@@ -1,23 +1,23 @@
 <div class="container index-hold">
 
-  <% if admin_user && admin_user.avatar_url %>
+  <%# if admin_user && admin_user.avatar_url %>
     <!--div class="col-md-3">
       <%#= render 'layouts/admin_profile' %>
     </div>
-    <div class="col-md-9"-->
+    <div class="col-md-9">
       <div class="row" id="content">
         <%= render @microposts %>
       </div>
       <div align="center">
         <%= will_paginate @microposts %>
-      </div>
+      </div-->
     <!--/div-->
-  <% else %>
+  <%# else %>
     <div class="row" id="content">
         <%= render @microposts %>
       </div>
       <div align="center">
         <%= will_paginate @microposts %>
       </div>
-  <% end %>
+  <%# end %>
 </div>

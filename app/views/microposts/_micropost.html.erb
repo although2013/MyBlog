@@ -1,8 +1,11 @@
 <div class="panel panel-default">
-  <div class="panel-body">
-    <%= micropost.content %>
+
+  <% count = micropost.comments_count %>
+
+  <div class="panel-body <%= 'popular' if count > 5 %>">
+    <%= micropost.content.html_safe %>
   </div>
-  <div class="panel-footer">
+  <div class="panel-footer <%= 'popular' if count > 5 %>">
     <ul>
       <% if admin? %>
         <li>
@@ -10,7 +13,7 @@
         </li>
       <% end %>
       <li>
-        <%= link_to content_tag(:i, " 评论 #{micropost.comments_count}", :class => "fa fa-comments"), micropost_path(micropost), class:"link-to-comment" %>
+        <%= link_to content_tag(:i, " 评论 #{count}", :class => "fa fa-comments"), micropost_path(micropost), class:"link-to-comment" %>
       </li>
       <li>
         <%= time_ago_in_words(micropost.created_at) %>

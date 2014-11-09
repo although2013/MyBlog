@@ -10,7 +10,8 @@
       <div class="comment_card">
         <%= image_tag comment.user.avatar_url(:small).to_s, class:"avatar" %>
         <div class="text">
-          <%=link_to "@#{comment.user.name}  ", comment.user %> &nbsp;<%= comment.content %>
+          <strong><%= link_to "#{comment.user.name}", comment.user %></strong> 
+          <div class="comment-content"><%= comment.content %></div>
         </div>
       </div>
       <div class="divider"></div>
