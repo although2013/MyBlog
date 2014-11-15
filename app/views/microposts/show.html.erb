@@ -2,7 +2,7 @@
 <div class="pad">
 <%= render 'layouts/flash' %>
   <div class="micropost_content">
-    <%= sanitize @micropost.content %>
+    <%= raw @micropost.content %>
   </div>
 </div>
 <div class="pad">

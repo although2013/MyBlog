@@ -10,8 +10,8 @@
     </div>
     <div class="collapse navbar-collapse" id="navbar-collapse-header">
       <ul class="nav navbar-nav">
-        <li  class="<%= 'active' if params[:controller] == 'microposts' %>"><a href="/microposts"><i class="fa fa-file-o"></i> 微博</a></li>
-        <li class="<%= 'active' if params[:controller] == 'photos' %>"><a href="/photos"><i class="fa fa-picture-o"> 相册</i></a></li>
+        <li  class="<%= 'active' if params[:controller] == 'microposts' %>"><a href="/microposts">微博</a></li>
+        <li class="<%= 'active' if params[:controller] == 'photos' %>"><a href="/photos">相册</i></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if signed_in? && !admin? %>

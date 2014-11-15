@@ -1,18 +1,22 @@
-<div class="album-container">
+<div class="container">
   <% @photos.each_slice(4) do |a| %>
     <div class="row">
       <% a.each do |item| %>
         <% if !item.picture.blank? %>
           <div class="col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <%= link_to image_tag(item.picture_url(:thumb).to_s), item %>
-              <div class="caption">
-                <% if !item.name.blank? %>
-                  <h5><%= item.name %></h5>
-                <% else %>
-                  <h5>&nbsp;</h5>
-                <% end %>
-              </div>
+            <div class="ih-item square colored effect1 bottom_to_top">
+              <a href='<%= photo_path(item) %>'>
+                <div class="img">
+                  <%= image_tag(item.picture_url(:thumb).to_s) %>
+                </div>
+                <div class="info">
+                  <% if !item.name.blank? %>
+                    <h3><%= item.name %></h3>
+                  <% else %>
+                    <h3>&nbsp;</h3>
+                  <% end %>
+                </div>
+              </a>
             </div>
           </div>
         <% end %>

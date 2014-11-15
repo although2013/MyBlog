@@ -8,6 +8,7 @@ module ApplicationHelper
     case distance_in_minutes
         when 0..1
             return (distance_in_minutes == 0) ? '不到1分钟' : '1分钟' unless include_seconds
+
         case distance_in_seconds
             when 0..4   then '5秒'
             when 5..9   then '10秒'
@@ -21,11 +22,12 @@ module ApplicationHelper
         when 45..89          then '1小时'
         when 90..1439        then "#{(distance_in_minutes.to_f / 60.0).round}小时"
         when 1440..2879      then '1天'
-        when 2880..43199     then "#{(distance_in_minutes / 1440).round}天"
-        when 43200..86399    then '1个月'
-        when 86400..525599   then "#{(distance_in_minutes / 43200).round}个月"
-        when 525600..1051199 then '1年'
-    else                      "#{(distance_in_minutes / 525600).round}年"
+        when 2880..20159     then "#{(distance_in_minutes / 1440).round}天"
+        when 20160..1051199  then "#{from_time.strftime('%m月%d日 %H:%M %A')}"
+
+    else                      
+        #"#{(distance_in_minutes / 525600).round}年"
+        "#{from_time.strftime('%Y年%m月%d日 %H:%M %A')}"
    end
   end
 

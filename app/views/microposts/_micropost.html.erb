@@ -3,7 +3,7 @@
   <% count = micropost.comments_count %>
 
   <div class="panel-body <%= 'popular' if count > 5 %>">
-    <%= sanitize micropost.content %>
+    <%= raw micropost.content %>
   </div>
   <div class="panel-footer <%= 'popular' if count > 5 %>">
     <ul>
