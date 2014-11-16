@@ -12,7 +12,7 @@
       <div class="frequent-tags">
         <% @frequent_posts.each do |post| %>
           <% unless post.tag.blank? %>
-            <span class="frequent-tag"><i class='fa fa-tag'></i> <%= post.tag%></span>
+            <span class="frequent-tag"><%=post.tag%></span>
           <% end %>
         <% end %>
       </div>
