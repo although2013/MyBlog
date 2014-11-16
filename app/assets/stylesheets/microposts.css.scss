@@ -84,7 +84,6 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
-  box-shadow:0px 0px 12px #cccccc;
 }
 
 // .micropost_content is in micropost#show => for micropost text
@@ -93,7 +92,7 @@
   padding-top: 10px;
   padding-left:12px;
   padding-right:20px;
-  font-size:19px;
+  font-size:20px;
   line-height:30px;
 }
 
@@ -151,9 +150,28 @@
 .tag {
   background-color:#eeeeee;
 }
+.tag > li > a {
+  color:#515873
+}
 
 
 
 .index-hold > h2 {
   text-align:center;
+}
+
+
+.frequent-tag {
+  background-color: #eeeeee;
+  padding: 3px 5px 3px 5px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+#tag-in-show {
+  background-color: #ececec;
+  margin-top: 10px;
+  margin-left: 10px;
+  padding:3px 6px 3px 6px;
+  font-size:12px;
 }

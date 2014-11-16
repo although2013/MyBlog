@@ -4,6 +4,9 @@
   <div class="micropost_content">
     <%= raw @micropost.content %>
   </div>
+  <% unless @micropost.tag.blank? %>
+    <span id='tag-in-show'><%= @micropost.tag %></span>
+  <% end %>
 </div>
 <div class="pad">
     <% @comments.each do |comment| %>

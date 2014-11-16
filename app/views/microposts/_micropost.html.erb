@@ -8,7 +8,7 @@
   <div class="panel-footer <%= 'popular' if count > 5 %>">
     <% unless  micropost.tag.blank? %>
       <ul class="pull-left tag">
-        <li><%=link_to micropost.tag, show_in_tag_path(micropost.tag) %></li>
+        <li><i class='fa fa-tag'></i> <%=link_to micropost.tag, show_in_tag_path(micropost.tag) %></li>
       </ul>
     <% end %>
     <ul>

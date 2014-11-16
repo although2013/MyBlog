@@ -21,10 +21,12 @@ class MicropostsController < ApplicationController
 
   def new
     @micropost = Micropost.new
+    @frequent_posts = Micropost.select("tag").limit(30).uniq
   end
 
 
   def edit
+    @frequent_posts = Micropost.select("tag").limit(30).uniq
   end
 
 

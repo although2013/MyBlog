@@ -20,13 +20,18 @@ page_endless = () ->
     $(window).scroll()
 
 
+# click one frequent tag, write it into input-form
+
+frequent_tags = ->
+  $('.frequent-tag').click ->
+    text = $(this).text()
+    $('#micropost_tag').val(text)
+
 
 
 $(document).on 'page:change', ->
   $("header").headroom();
 
-  if $(window).width() < 992
-    $('.admin-pro').hide();
-
   page_endless();
+  frequent_tags();
   

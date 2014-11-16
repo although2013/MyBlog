@@ -5,10 +5,18 @@
         <%= f.label :content, "微博内容" %><br>
         <%= f.text_area :content, :class => "form-control"%><br>
 
-        <%= f.label :content, "tag" %>
-        <%= f.text_field :tag, class:'form-control input_short' %><br>
-      </div>
+        <%= f.label :content, "标签" %>
 
+        <%= f.text_field :tag, class:'form-control input_short' %>
+      </div>
+      <div class="frequent-tags">
+        <% @frequent_posts.each do |post| %>
+          <% unless post.tag.blank? %>
+            <span class="frequent-tag"><i class='fa fa-tag'></i> <%= post.tag%></span>
+          <% end %>
+        <% end %>
+      </div>
+<br>
       <div class="actions">
         <%= f.submit "发 送", :class => "btn btn-primary" %>
       </div>
