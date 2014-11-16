@@ -143,9 +143,16 @@
 } 
 
 
-
 .panel > a:hover, afocus {
-
   text-decoration: none;
+}
 
+.tag {
+  background-color:#eeeeee;
+}
+
+
+
+.index-hold > h2 {
+  text-align:center;
 }

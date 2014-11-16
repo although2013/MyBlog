@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+
+
   resources :users
 
   resources :microposts do
@@ -21,6 +23,9 @@ Rails.application.routes.draw do
 
   match '/register', to: 'users#new', via: 'get'
   match '/users/:id/edit-avatar', to: 'users#edit_avatar', via: 'get', as: :edit_avatar
+  
+  match '/tags/:tag', to: 'microposts#show_in_tag', via: 'get', as: :show_in_tag
+
   match '/upload',  to: 'photos#new', via: 'get'
   match '/login', to: 'sessions#new', via: 'get'
   

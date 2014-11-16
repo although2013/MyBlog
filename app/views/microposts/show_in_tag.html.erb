@@ -1,0 +1,10 @@
+<div class="container index-hold">
+<h2>所有标签为 <%= @tag %> 的微博</h2>
+  <div class="row" id="content">
+    <%= render @microposts %>
+  </div>
+  <div align="center">
+    <%= will_paginate @microposts %>
+  </div>
+
+</div>

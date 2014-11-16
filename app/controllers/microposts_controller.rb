@@ -13,6 +13,11 @@ class MicropostsController < ApplicationController
     @comment = Comment.new
   end
 
+  def show_in_tag
+    @tag = params[:tag]
+    @microposts = Micropost.where(tag: @tag).paginate(page: params[:page]).per_page(15)
+  end
+
 
   def new
     @micropost = Micropost.new
@@ -58,7 +63,7 @@ class MicropostsController < ApplicationController
     end
 
     def micropost_params
-      params.require(:micropost).permit(:content, :user_id)
+      params.require(:micropost).permit(:content, :user_id, :tag)
     end
 
 end
