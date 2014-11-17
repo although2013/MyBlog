@@ -1,5 +1,5 @@
 <div class="center pad">
-<%= render "layouts/flash" %>
+<%= render "layouts/flash", object: @user %>
   <h1>修改个人资料</h1>
   <% if !@user.avatar.blank? %>
     <%= image_tag @user.avatar_url(:small).to_s %>

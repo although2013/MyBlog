@@ -1,6 +1,11 @@
 <div class="center pad">
 
-  <%= render "layouts/flash" %>
+  <% if flash[:success] %>
+    <div class="alert alert-success" role="alert"><%= flash[:success] %></div>
+  <% end %>
+  <% if flash[:danger] %>
+    <div class="alert alert-danger" role="alert"><%= flash[:danger] %></div>
+  <% end %>
 
 <h1>登录您的帐户</h1>
 

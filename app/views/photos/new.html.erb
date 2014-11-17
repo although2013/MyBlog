@@ -1,6 +1,6 @@
 <div class="center pad">
 <h1>上传照片</h1>
-<%= render "layouts/flash" %>
+<%= render "layouts/flash", object: @photo %>
   <div class="my_form">
 
     <%= form_for @photo, :html => {:multipart => true} do |f| %>

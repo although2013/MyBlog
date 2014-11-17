@@ -4,19 +4,18 @@
     <%= f.file_field :avatar %><br>
 
     <%= f.label "用户名" %>
-    <%= f.text_field :name, class:'form-control input_short' %><br>
+    <%= f.text_field :name, class: alertWrongUserForm(:name) %><br>
 
     <%= f.label "邮箱地址" %>
-    <%= f.text_field :email, class:'form-control input_short' %><br>
+    <%= f.text_field :email, class: alertWrongUserForm(:email) %><br>
 
     <%= f.label :password, "输入密码" %>
-    <%= f.password_field :password, class:'form-control input_short' %><br>
+    <%= f.password_field :password, class: alertWrongUserForm(:password) %><br>
 
     <%= f.label :password, "再次输入密码" %>
-    <%= f.password_field :password_confirmation, class:'form-control input_short' %><br>
+    <%= f.password_field :password_confirmation, class: alertWrongUserForm(:password) %><br>
 
     <%= f.submit "注册用户", class: "btn btn-large btn-primary"%><br>
-
   <% end %>
 </div>
 

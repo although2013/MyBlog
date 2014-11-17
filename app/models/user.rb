@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
 
-  validates :name, presence: true, length: { maximum: 50 }, uniqueness: { case_sensitive: false }
-  validates :email, presence: true,uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
-  validates :password, presence: true, length: { minimum: 6 }, :on => :create
+  validates :name, uniqueness: { case_sensitive: false }, format: { with: /[a-zA-Z][a-zA-Z0-9]{3,19}/ }
+  validates :email, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[a-z0-9-]+\.)+[a-z]{2,})\z/i }
+  validates :password, length: { minimum: 6 }, :on => :create
 
   before_save { self.email = email.downcase }
   before_create :create_remember_token

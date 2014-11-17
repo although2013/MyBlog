@@ -35,7 +35,6 @@ class UsersController < ApplicationController
         redirect_to @user
       end
     else
-      flash[:danger] = "注册失败！"
       render :new
     end
   end

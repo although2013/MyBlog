@@ -1,0 +1,63 @@
+zh-CN:
+  activerecord:
+    attributes:
+      comment:
+        commentable: "评论对象"
+        created_at: "创建于"
+        user: "用户"
+      user:
+        avatar: "头像"
+        created_at: "创建于"
+        email: '邮箱地址'
+        name: "用户名"
+        password: "密码"
+        password_confirmation: "密码确认"
+        username: "用户名"
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "格式错误"
+              taken: "已被使用"
+            name:
+              invalid: "只能使用字母、数字，并且不能以数字开头,长度为4到20之间"
+              taken: "已被使用"
+            password:
+              blank: "不能为空"
+              too_short: "太短，至少6位"
+            password_confirmation:
+              confirmation: "两次输入不匹配"
+  locales:
+    en: "英文"
+    zh-CN: "简体中文"
+    zh-TW: "正体中文"
+
+  users:
+    comments:
+      index:
+        comments: "评论"
+        publish: "发布"
+        user_s_comments: "%{name} 的评论"
+    new:
+      choose_a_password: "选一个密码"
+      create_account: "创建帐号"
+      pick_a_username: "挑一个用户名"
+      sign_up: "注册"
+      your_email: "你的邮箱地址"
+      your_full_name: "你的全名"
+    passwords:
+      edit:
+        password_reset: "密码重置"
+        save_changes: "保存修改"
+      new:
+        email: Email
+        password_reset: "密码重置"
+        send_reset_email: "发送重置密码"
+        your_email: "你的 Email 地址"
+      show:
+        password_reset: "密码重置"
+        password_reset_email_has_been_sent_message: "密码重置邮件已发送，请注意查收。"
+    profile:
+      edit_profile: "编辑个人资料"
+

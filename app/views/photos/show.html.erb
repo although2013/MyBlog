@@ -1,4 +1,4 @@
-<%= render 'layouts/flash' %>
+<%= render 'layouts/flash', object: @photo %>
 <div align="center" class="img-detail">
   <%= image_tag @photo.picture_url(:detail).to_s, class:"img-responsive" %>
   <%#= image_tag @photo.picture_url.to_s, class:"img-responsive" %>
