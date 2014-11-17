@@ -25,6 +25,15 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
   end
 
+  def destroy
+    @photo = Photo.find(params[:id])
+    if @photo.destroy
+      redirect_to photos_url
+    else
+      redirect_to root_url
+    end
+  end
+
   private
   def photo_params
     params.require(:photo).permit(:name, :picture)

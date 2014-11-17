@@ -14,7 +14,7 @@ class MicropostsController < ApplicationController
   end
 
   def show_in_tag
-    @tag = params[:tag]
+    @tag = params[:tag].gsub(/\A\s+|\s+\z/, '')
     @microposts = Micropost.where(tag: @tag).paginate(page: params[:page]).per_page(15)
   end
 
@@ -32,6 +32,7 @@ class MicropostsController < ApplicationController
 
   def create
     @micropost = Micropost.new(micropost_params)
+    @micropost.tag.gsub!(/\A\s+|\s+\z/, '')
     if @micropost.save
       flash[:success] = '微博发送成功'
       redirect_to @micropost

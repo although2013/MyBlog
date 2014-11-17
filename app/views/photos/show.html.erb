@@ -2,4 +2,8 @@
 <div align="center" class="img-detail">
   <%= image_tag @photo.picture_url(:detail).to_s, class:"img-responsive" %>
   <%#= image_tag @photo.picture_url.to_s, class:"img-responsive" %>
+  <% if admin? %>
+    <br><br>
+    <%= link_to '删除', @photo, class:'btn btn-danger' , method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
 </div>

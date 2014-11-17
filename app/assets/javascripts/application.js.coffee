@@ -24,7 +24,7 @@ page_endless = () ->
 
 frequent_tags = ->
   $('.frequent-tag').click ->
-    text = $(this).text()
+    text = $.trim($(this).text())
     $('#micropost_tag').val(text)
 
 
