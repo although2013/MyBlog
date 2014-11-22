@@ -14,14 +14,14 @@
         <li class="<%= 'active' if params[:controller] == 'photos' %>"><a href="/photos">相册</i></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <% if signed_in? && !admin? %>
-          <%= render 'layouts/normal_user_header' %>
-        <% elsif signed_in? && admin? %>
-          <%= render 'layouts/admin_header' %>
-        <% else %>
+        <% if !signed_in? %>
           <li>
             <%= link_to content_tag(:i, " 登录", :class => "fa fa-users"), login_url %>
           </li>
+        <% elsif !admin? %>
+          <%= render 'layouts/normal_user_header' %>
+        <% else %>
+          <%= render 'layouts/admin_header' %>
         <% end %>
       </ul>
     </div>

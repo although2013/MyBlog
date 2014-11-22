@@ -19,6 +19,19 @@ module SessionsHelper
     user == current_user
   end
 
+  def admin?
+    if signed_in?
+      email = current_user.email.downcase
+      CONFIG['admin_emails'] && CONFIG['admin_emails'].include?(email)
+    end
+  end
+
+  def admin_require
+    if !admin?
+      redirect_to root_path
+    end
+  end
+
   def signed_in?
     !current_user.nil?
   end

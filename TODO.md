@@ -21,6 +21,6 @@
 
 - ~~给微博加 tag ，能够显示常用tag，显示在 新微博 form 下面，供点击选择，，在首页放分类列表~~
 
-- 管理员也只能看到自己的 comments ，下次修改, dashboard
+- 管理员也只能看到自己的 nitifications? or comments? ，下次修改, dashboard
 
 - ~~box shadow 导航栏~~
