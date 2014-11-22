@@ -1,6 +1,8 @@
 zh-CN:
   activerecord:
     attributes:
+      photo:
+        picture: "照片"
       comment:
         commentable: "评论对象"
         created_at: "创建于"
@@ -28,6 +30,10 @@ zh-CN:
               too_short: "太短，至少6位"
             password_confirmation:
               confirmation: "两次输入不匹配"
+        photo:
+          attributes:
+            picture:
+              blank: "不能为空"
   locales:
     en: "英文"
     zh-CN: "简体中文"
