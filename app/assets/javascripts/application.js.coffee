@@ -28,10 +28,19 @@ frequent_tags = ->
     $('#micropost_tag').val(text)
 
 
+header_border_bottom = ->
+  if $(window).width() < 768
+    $('.navbar-header').css('box-shadow':'0px 1px 2px #e7e7e7');
+  else
+    $('.navbar-header').css('box-shadow':'none');
+
+
+$(window).resize(header_border_bottom);
+
 
 $(document).on 'page:change', ->
   $("header").headroom();
 
   page_endless();
   frequent_tags();
-  
+  header_border_bottom();
