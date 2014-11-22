@@ -1,7 +1,5 @@
 <div class="panel panel-default">
-
   <% count = micropost.comments_count %>
-
   <div class="panel-body <%= 'popular' if count > 5 %>">
     <%= raw micropost.content %>
   </div>
