@@ -1,10 +1,24 @@
 module ApplicationHelper
+  def week_day(from_time)
+    case from_time.strftime('%A')
+    when 'Monday'    then "周一"
+    when 'Tuesday'   then "周二"
+    when 'Wednesday' then "周三"
+    when 'Thursday'  then "周四"
+    when 'Friday'    then "周五"
+    when 'Saturday'  then "周六"
+    when 'Sunday'    then "周日"
+    else                  "    "
+    end
+  end
+
   def distance_of_time_in_words(from_time, to_time = 0, include_seconds = false)
     from_time = from_time.to_time if from_time.respond_to?(:to_time)
     to_time = to_time.to_time if to_time.respond_to?(:to_time)
     distance_in_minutes = (((to_time - from_time).abs)/60).round
     distance_in_seconds = ((to_time - from_time).abs).round
- 
+
+
     case distance_in_minutes
         when 0..1
             return (distance_in_minutes == 0) ? '不到1分钟' : '1分钟' unless include_seconds
@@ -23,11 +37,11 @@ module ApplicationHelper
         when 90..1439        then "#{(distance_in_minutes.to_f / 60.0).round}小时"
         when 1440..2879      then '1天'
         when 2880..20159     then "#{(distance_in_minutes / 1440).round}天"
-        when 20160..1051199  then "#{from_time.strftime('%m月%d日 %H:%M %A')}"
+        when 20160..1051199  then "#{from_time.strftime('%m月%d日 %H:%M')} #{week_day(from_time)}"
 
-    else                      
+    else
         #"#{(distance_in_minutes / 525600).round}年"
-        "#{from_time.strftime('%Y年%m月%d日 %H:%M %A')}"
+        "#{from_time.strftime('%Y年%m月%d日 %H:%M')} #{week_day(from_time)}"
    end
   end
 
